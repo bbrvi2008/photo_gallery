@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+
 
 import { Glyphicon, Panel, FormControl, Button, ButtonGroup } from 'react-bootstrap';
 
@@ -42,8 +44,9 @@ class AlbumItem extends Component {
   }
 
   render() {
-    const { item } = this.props;
+    const { item, match } = this.props;
     const { edit } = this.state;
+
 
     return (
         <Panel className="square">
@@ -61,7 +64,7 @@ class AlbumItem extends Component {
           </div>
           <Panel.Body className="content">
             <div className="album-item_body">
-              <Link to={`album/${item.id}`}><Glyphicon glyph="folder-open" /></Link>
+              <Link to={`test/album/${item.id}`}><Glyphicon glyph="folder-open" /></Link>
             </div>
             <div className="album-item_footer">
               {
@@ -86,4 +89,4 @@ AlbumItem.propTypes = {
   onRemove: PropTypes.func.isRequired
 };
 
-export default AlbumItem;
+export default withRouter(props => <AlbumItem {...props} />);

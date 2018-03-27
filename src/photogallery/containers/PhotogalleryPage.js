@@ -1,16 +1,20 @@
 import React, { Component } from 'react'; 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 
 import AlbumsPage from './AlbumsPage';
 import ImagesPage from './ImagesPage';
 
-export default class PhotogalleryPage extends Component {
+class PhotogalleryPage extends Component {
   render() {
+    const { location } = this.props;
+
     return (
       <Switch>
-        <Route exact path='/' component={AlbumsPage} />
-        <Route path='/album/:id' component={ImagesPage} />          
+        <Route exact path={`${location.pathname}/`} component={AlbumsPage} />
+        <Route path={`${location.pathname}/album/:id`} component={ImagesPage} />          
       </Switch>
     );
   }
-}
+};
+
+export default withRouter(props => <PhotogalleryPage {...props} />);
