@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ImageItem from '../components/ImageItem';
 import NewImageButton from '../components/buttons/NewImage';
 
-import { Button, Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 import { imageActions } from '../store/actions/image';
 

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import { Glyphicon, Panel, Button, Modal } from 'react-bootstrap';
 
-import { Link } from 'react-router-dom';
-
 import './AlbumItem.css';
 
 class ImageItem extends Component {
@@ -39,8 +37,6 @@ class ImageItem extends Component {
       backgroundSize: 'cover'
     }
 
-    console.log(item);
-
     return (
       <div>
         <Panel className="square">
@@ -69,10 +65,9 @@ class ImageItem extends Component {
   }
 };
 
-/*AlbumItem.propTypes = {
+ImageItem.propTypes = {
   item: PropTypes.object.isRequired,
-  onUpdate: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired
-};*/
+};
 
 export default ImageItem;

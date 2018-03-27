@@ -6,40 +6,9 @@ import NewAlbumButton from '../components/buttons/NewAlbum';
 
 import { albumActions } from '../store/actions/album';
 
-import { Button, Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class AlbumsPage extends Component {
-  constructor(props) {
-    super(props);
-
-    /*this.state = {
-      album: {
-        title: ''
-      }
-    };*/
-  }
-
-  /*setTitle(title) {
-    this.setState({
-      ...this.state,
-      album: {
-        ...this.state.album,
-        title
-      }
-    });
-  }
-
-  onClickAddAlbum = () => {
-    const album = this.state.album;
-    onAddAlbum(album);
-    this.setTitle("")
-  }
-
-  onChangeTitle = (e) => {
-    const title = e.target.value;
-    this.setTitle(title)
-  }*/
-
   render() {
     const { albums, onAddAlbum, onUpdateAlbum, onRemoveAlbum } = this.props;
 
